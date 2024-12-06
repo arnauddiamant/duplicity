@@ -757,7 +757,7 @@ backup_to_s3_container() {
     # AWS_ACCESS_KEY_ID: IAM user’s access key ID
     # AWS_SECRET_ACCESS_KEY: IAM user’s secret access key
     # GPG_KEY
-    local PASSPHRASE="${S3_PASSPHRASE}" # this will be a symmetric encryption password or GPG key passphrase if asymmetric encryption is used
+    # local PASSPHRASE="${S3_PASSPHRASE}" # this will be a symmetric encryption password or GPG key passphrase if asymmetric encryption is used
 
     # AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY are required
     ([ -z ${AWS_ACCESS_KEY_ID+x} ] || [ -z ${AWS_SECRET_ACCESS_KEY+x} ]) && exit_fatal_message "AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY must be defined"
@@ -952,7 +952,7 @@ delete_older_backup_from_s3_container() {
     local duplicity_options="--file-prefix=${!backup_prefix_variable} --force"
     local duplicity_target="s3://s3.amazonaws.com/${!s3_container_variable}/"
 
-    local PASSPHRASE="${S3_PASSPHRASE}"
+    # local PASSPHRASE="${S3_PASSPHRASE}"
     local gpg_options=""
 
     # AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY are required
@@ -1276,7 +1276,7 @@ restore_backup_from_s3_container() {
     local duplicity_options="--file-prefix=${!backup_prefix_variable} --force"
     local duplicity_target="s3://s3.amazonaws.com/${!s3_container_variable}/"
 
-    local PASSPHRASE="${S3_PASSPHRASE}"
+    # local PASSPHRASE="${S3_PASSPHRASE}"
     local gpg_options=""
 
     # AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY are required
@@ -1450,7 +1450,7 @@ content_backup_from_s3_container() {
     local duplicity_options="--file-prefix=${!backup_prefix_variable}"
     local duplicity_target="s3://s3.amazonaws.com/${!s3_container_variable}/"
 
-    local PASSPHRASE="${S3_PASSPHRASE}"
+    # local PASSPHRASE="${S3_PASSPHRASE}"
     local gpg_options=""
 
     # AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY are required
@@ -1575,7 +1575,7 @@ list_backupset_from_s3_container() {
     local duplicity_options="--file-prefix=${!backup_prefix_variable}"
     local duplicity_target="s3://s3.amazonaws.com/${!s3_container_variable}/"
 
-    local PASSPHRASE="${S3_PASSPHRASE}"
+    # local PASSPHRASE="${S3_PASSPHRASE}"
     local gpg_options=""
 
     # AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY are required
@@ -1697,7 +1697,7 @@ cleanup_backupset_from_s3_container() {
     local duplicity_options="--file-prefix=${!backup_prefix_variable} --force"
     local duplicity_target="s3://s3.amazonaws.com/${!s3_container_variable}/"
 
-    local PASSPHRASE="${S3_PASSPHRASE}"
+    # local PASSPHRASE="${S3_PASSPHRASE}"
     local gpg_options=""
 
     # AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY are required
@@ -1891,7 +1891,7 @@ compare_backup_from_s3_container() {
     local duplicity_options="--file-prefix=${!backup_prefix_variable}"
     local duplicity_target="s3://s3.amazonaws.com/${!s3_container_variable}/"
 
-    local PASSPHRASE="${S3_PASSPHRASE}"
+    # local PASSPHRASE="${S3_PASSPHRASE}"
     local gpg_options=""
 
     # AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY are required
